@@ -36,5 +36,8 @@
     "istanbul": "^0.3.13",
     "mocha": "^2.2.1",
     "should": "^5.2.0"
+  },
+  "dependencies": {
+    "debug": "^2.1.3"
   }
 }
