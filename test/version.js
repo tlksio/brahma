@@ -1,8 +1,12 @@
 var should = require("should");
 
+var brahma = require('../index.js');
+
 describe('Common', function() {
-    // TODO: Check version from package.json
+    "use strict";
+
     it('has a version', function() {
-        should.equal(1, 1);
+        var version = require('../package.json').version;
+        should.equal(version, brahma.version);
     });
 });
