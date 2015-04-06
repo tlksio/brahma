@@ -8,12 +8,19 @@ var coveralls = require('gulp-coveralls');
 var del = require('del');
 
 gulp.task('clean', function() {
+    'use strict';
+
     del(['node_modules', 'coverage'], function(err, delfiles) {
-        return err;
+        if (err) {
+            return err;
+        }
+        return delfiles;
     });
 });
 
 gulp.task('dist', function() {
+    'use strict';
+
     return gulp.src(['./index.js', './lib/**/*.js'])
         .pipe(sourcemaps.init())
         .pipe(concat('brahma.js'))
@@ -27,12 +34,22 @@ gulp.task('dist', function() {
 });
 
 gulp.task('jshint', function() {
-    return gulp.src(['./lib/**/*.js', 'index.js', 'gulpfile.js'])
+    'use strict';
+
+    return gulp.src([
+            './test/**/*.js',
+            './lib/**/*.js',
+            'index.js',
+            'gulpfile.js'
+        ])
         .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('coveralls', function() {
+    'use strict';
+
     gulp.src('./coverage/**/lcov.info')
         .pipe(coveralls());
 });

@@ -2,6 +2,7 @@ var should = require("should");
 var Schedule = require('../lib/schedule');
 
 describe('Scheduler', function() {
+    'use strict';
 
     var _1sec = 1000;
 
@@ -87,7 +88,7 @@ describe('Scheduler', function() {
     });
     */
 
-    describe('Reset scheduler', function(done) {
+    describe('Reset scheduler', function() {
 
         before(function(done) {
             schedule.reset();
