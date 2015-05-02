@@ -1,10 +1,10 @@
 {
   "name": "brahma",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "brahma is a schedule task library",
   "main": "index.js",
   "scripts": {
-    "test": "make cover"
+    "test": "make all"
   },
   "repository": {
     "type": "git",
